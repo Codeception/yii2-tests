@@ -21,4 +21,4 @@ install:
   - composer install --no-interaction
   - bin/codecept build
 script:
-  - bin/codecept run
+  - bin/codecept run --debug

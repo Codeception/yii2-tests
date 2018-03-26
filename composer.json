@@ -1,0 +1,37 @@
+{
+  "name": "sam-it/yii2-codeception-tests",
+  "description": "Yii2 Codeception Tests",
+  "type": "project",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "yiisoft/yii2": "dev-master",
+    "codeception/codeception": "^2.4"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sam Mousa",
+      "email": "sam@mousa.nl"
+    }
+  ],
+  "config": {
+    "vendor-dir": "vendor",
+    "bin-dir": "bin"
+  },
+  "autoload": {
+    "classmap": [
+      "vendor/yiisoft/yii2/Yii.php",
+      "cases"
+    ]
+  },
+  "scripts": {
+    "test" : ""
+  }
+}

@@ -8,16 +8,12 @@
     "yiisoft/yii2": "dev-master"
   },
   "require-dev": {
-    "codeception/codeception": "dev-yii2-rework"
+    "codeception/codeception": "^2.4"
   },
   "repositories": [
     {
       "type": "composer",
       "url": "https://asset-packagist.org"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/SamMousa/Codeception"
     }
   ],
   "license": "MIT",

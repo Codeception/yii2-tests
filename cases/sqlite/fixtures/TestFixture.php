@@ -2,6 +2,7 @@
 namespace tests\fixtures;
 
 
+use yii\db\Connection;
 use yii\db\Exception;
 use yii\test\DbFixture;
 
@@ -12,16 +13,24 @@ class TestFixture extends DbFixture
         'id' => 'int'
     ];
 
+    public $dbComponents = [];
+
     public function load() {
-        $this->db->createCommand()->createTable($this->tableName, $this->tableConfig)->execute();
+        foreach($this->dbComponents as $name) {
+            /** @var Connection $connection */
+            $connection = \Yii::$app->get($name);
+            $connection->createCommand()->createTable($this->tableName, $this->tableConfig)->execute();
+        }
     }
 
     public function unload()
     {
-        try {
-            $this->db->createCommand()->dropTable($this->tableName)->execute();
-        } catch (Exception $e) {
-
+        foreach($this->dbComponents as $name) {
+            /** @var Connection $connection */
+            $connection = \Yii::$app->get($name);
+            if (in_array($this->tableName, $connection->getSchema()->getTableNames('', true))) {
+                $connection->createCommand()->dropTable($this->tableName)->execute();
+            }
         }
     }
 }

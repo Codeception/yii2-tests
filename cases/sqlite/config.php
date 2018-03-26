@@ -6,19 +6,19 @@ return [
     'components' => [
         'db' => [
             'class' => yii\db\Connection::class,
-            'dsn' => 'sqlite:' . sys_get_temp_dir() . '/file'
+            'dsn' => 'sqlite:' . tempnam(null, '/file0')
         ],
         'db1' => [
             'class' => yii\db\Connection::class,
-            'dsn' => 'sqlite:' . sys_get_temp_dir() . '/file1'
+            'dsn' => 'sqlite:' . tempnam(null, '/file1')
         ],
         'db21' => [
             'class' => yii\db\Connection::class,
-            'dsn' => 'sqlite:' . sys_get_temp_dir() . '/file2'
+            'dsn' => 'sqlite:' . ($name = tempnam(null, '/file2'))
         ],
         'db22' => [
             'class' => yii\db\Connection::class,
-            'dsn' => 'sqlite:' . sys_get_temp_dir() . '/file2'
+            'dsn' => 'sqlite:' . $name
         ]
     ]
 ];

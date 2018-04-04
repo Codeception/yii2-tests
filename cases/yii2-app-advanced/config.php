@@ -3,8 +3,6 @@
 file_put_contents(__DIR__ . '/../../vendor/yiisoft/yii2-app-advanced/common/config/params-local.php', '<?php return [];');
 file_put_contents(__DIR__ . '/../../vendor/yiisoft/yii2-app-advanced/frontend/config/params-local.php', '<?php return [];');
 
-
-
 $config = \yii\helpers\ArrayHelper::merge(require __DIR__ . '/../../vendor/yiisoft/yii2-app-advanced/frontend/config/main.php', [
     'components' => [
         'db' => [

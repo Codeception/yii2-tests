@@ -4,6 +4,7 @@ defined('YII_ENV') || define('YII_ENV', 'test');
 
 call_user_func(function() {
     $loader = require __DIR__ . '/vendor/autoload.php';
+
     $container = new \yii\di\Container();
 //    call_user_func(function() use ($container) {
 //        require __DIR__ .'/../src/config/di.php';
@@ -12,3 +13,7 @@ call_user_func(function() {
 //    Yii::$loader = $loader;
     Yii::$container = $container;
 });
+
+if (!symlink(__DIR__ . '/vendor', __DIR__ . '/vendor/yiisoft/yii2-app-advanced/vendor')) {
+    die('failed to create symlink');
+}

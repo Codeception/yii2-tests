@@ -1,6 +1,6 @@
 <?php
-define('YII_DEBUG', true);
-define('YII_ENV', 'test');
+defined('YII_DEBUG') || define('YII_DEBUG', true);
+defined('YII_ENV') || define('YII_ENV', 'test');
 
 call_user_func(function() {
     $loader = require __DIR__ . '/vendor/autoload.php';
@@ -12,4 +12,3 @@ call_user_func(function() {
 //    Yii::$loader = $loader;
     Yii::$container = $container;
 });
-

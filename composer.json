@@ -5,10 +5,12 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "yiisoft/yii2": "dev-master"
+    "yiisoft/yii2": "dev-master",
+    "yiisoft/yii2-app-advanced": "^2.0",
+    "codeception/verify": "^1.0"
   },
   "require-dev": {
-    "codeception/codeception": "^2.4"
+    "codeception/codeception": "2.4.x-dev"
   },
   "repositories": [
     {

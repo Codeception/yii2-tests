@@ -8,11 +8,10 @@
     "yiisoft/yii2": "dev-master",
     "yiisoft/yii2-app-advanced": "^2.0",
     "codeception/verify": "*",
-    "codeception/codeception": "2.4.x-dev",
     "codemix/yii2-localeurls": "^1.7"
   },
   "require-dev": {
-
+     "codeception/codeception": "2.4.x-dev"
   },
   "repositories": [
     {

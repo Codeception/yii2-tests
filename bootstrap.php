@@ -14,6 +14,7 @@ call_user_func(function() {
     Yii::$container = $container;
 });
 
-if (!symlink(__DIR__ . '/vendor', __DIR__ . '/vendor/yiisoft/yii2-app-advanced/vendor')) {
+$link = __DIR__ . '/vendor/yiisoft/yii2-app-advanced/vendor';
+if (!file_exists($link) && !symlink(__DIR__ . '/vendor', $link)) {
     die('failed to create symlink');
 }

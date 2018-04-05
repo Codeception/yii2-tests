@@ -23,7 +23,6 @@ return [
     'on beforeRequest' => function(\yii\base\Event $event) {
         $app = $event->sender;
         if ($app->has('urlManager', true)) {
-            $app->urlManager->_processed = false;
             $config = $app->getComponents()['urlManager'];
             \Codeception\Util\Debug::debug('Resetting url manager: ' . print_r($config, true));
             $app->set('urlManager', $config);

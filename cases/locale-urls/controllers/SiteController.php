@@ -1,6 +1,6 @@
 <?php
 
-namespace app\simple\controllers;
+namespace app\localeurls\controllers;
 use yii\helpers\Url;
 use yii\web\Controller;
 
@@ -29,16 +29,5 @@ HTML;
     {
         \Yii::$app->response->statusCode = 201;
         return print_r(\Yii::$app->request->bodyParams, true);
-    }
-
-    public function actionException()
-    {
-        throw new \Exception('This is not an HttpException');
-    }
-
-    public function actionEnd()
-    {
-        \Yii::$app->response->statusCode = 500;
-        \Yii::$app->end();
     }
 }

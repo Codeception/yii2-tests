@@ -8,5 +8,10 @@ return [
             'enableCsrfValidation' => false,
             'cookieValidationKey' => 'test'
         ]
-    ]
+    ],
+    'on beforeRequest' => function() {
+        if (isset(\Yii::$app->params['throw'])) {
+            throw \Yii::$app->params['throw'];
+        }
+    }
 ];

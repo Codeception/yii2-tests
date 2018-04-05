@@ -1,6 +1,7 @@
 <?php
 namespace tests;
 
+use yii\base\ExitException;
 use yii\web\Application;
 
 class SimpleCest
@@ -32,4 +33,25 @@ class SimpleCest
         $I->canSeeResponseCodeIs(201);
     }
 
+    public function testException(FunctionalTester $I)
+    {
+        $I->expectException(new \Exception('This is not an HttpException'), function() use ($I) {
+            $I->amOnPage(['site/exception']);
+        });
+    }
+
+    public function testExceptionInBeforeRequest(FunctionalTester $I)
+    {
+        $e = new \Exception('This is not an HttpException');
+        \Yii::$app->params['throw'] = $e;
+        $I->expectException($e, function() use ($I) {
+            $I->amOnPage(['site/exception']);
+        });
+    }
+
+    public function testExitException(FunctionalTester $I)
+    {
+        $I->amOnPage(['site/end']);
+        $I->seeResponseCodeIs(500);
+    }
 }

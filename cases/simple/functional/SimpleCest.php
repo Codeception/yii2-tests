@@ -38,6 +38,7 @@ class SimpleCest
         $I->expectException(new \Exception('This is not an HttpException'), function() use ($I) {
             $I->amOnPage(['site/exception']);
         });
+        $I->assertInstanceOf(Application::class, \Yii::$app);
     }
 
     public function testExceptionInBeforeRequest(FunctionalTester $I)

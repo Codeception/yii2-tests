@@ -1,0 +1,8 @@
+actor: FunctionalTester
+modules:
+  enabled:
+    - Yii2
+    - Asserts
+  config:
+    Yii2:
+      cleanup: true

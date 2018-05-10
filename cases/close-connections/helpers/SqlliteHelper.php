@@ -17,7 +17,7 @@ class SqlliteHelper
     public static function connectionCount()
     {
         $path = self::$temp_name;
-        $count = shell_exec("lsof -e /sys/kernel/debug/tracing {$path} | grep {$path} | wc -l");
+        $count = shell_exec("lsof {$path} | grep {$path} | wc -l");
         return (int)$count;
     }
 }

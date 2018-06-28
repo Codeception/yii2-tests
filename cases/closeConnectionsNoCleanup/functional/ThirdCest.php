@@ -2,19 +2,19 @@
 
 namespace tests\closeConnectionsNoCleanup;
 
-use tests\AcceptanceTester;
+use tests\FunctionalTester;
 use tests\fixtures\EmptyFixture;
 use tests\helpers\SqlliteHelper;
 
 class ThirdCest
 {
-    public function NoConnections1(AcceptanceTester $I)
+    public function NoConnections1(FunctionalTester $I)
     {
         $count = SqlliteHelper::connectionCount();
         $I->assertEquals(0, $count);
     }
 
-    public function OnlyOneConnection2(AcceptanceTester $I)
+    public function OnlyOneConnection2(FunctionalTester $I)
     {
         $I->haveFixtures([
             [
@@ -26,7 +26,7 @@ class ThirdCest
         $I->assertEquals(1, $count);
     }
 
-    public function OnlyOneConnection3(AcceptanceTester $I)
+    public function OnlyOneConnection3(FunctionalTester $I)
     {
         $I->haveFixtures([
             [

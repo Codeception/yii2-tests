@@ -37,6 +37,6 @@
     ]
   },
   "scripts": {
-    "test" : ""
+    "test" : "codecept run"
   }
 }

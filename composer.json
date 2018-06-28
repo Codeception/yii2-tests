@@ -11,16 +11,12 @@
     "codemix/yii2-localeurls": "^1.7"
   },
   "require-dev": {
-     "codeception/codeception": "yii2-event-handlers-dev"
+     "codeception/codeception": "2.4.x-dev"
   },
   "repositories": [
     {
       "type": "composer",
       "url": "https://asset-packagist.org"
-    },
-    {
-      "url": "https://github.com/SamMousa/Codeception.git",
-      "type": "git"
     }
   ],
   "license": "MIT",

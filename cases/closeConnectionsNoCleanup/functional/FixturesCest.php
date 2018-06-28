@@ -2,7 +2,7 @@
 
 namespace tests\closeConnectionsNoCleanup;
 
-use tests\AcceptanceTester;
+use tests\FunctionalTester;
 use tests\fixtures\EmptyFixture;
 use tests\helpers\SqlliteHelper;
 
@@ -17,19 +17,19 @@ class FixturesCest
         ];
     }
 
-    public function NoConnections1(AcceptanceTester $I)
+    public function NoConnections1(FunctionalTester $I)
     {
         $count = SqlliteHelper::connectionCount();
         $I->assertEquals(0, $count);
     }
 
-    public function NoConnections2(AcceptanceTester $I)
+    public function NoConnections2(FunctionalTester $I)
     {
         $count = SqlliteHelper::connectionCount();
         $I->assertEquals(0, $count);
     }
 
-    public function NoConnections3(AcceptanceTester $I)
+    public function NoConnections3(FunctionalTester $I)
     {
         $count = SqlliteHelper::connectionCount();
         $I->assertEquals(0, $count);

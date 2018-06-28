@@ -1,12 +1,12 @@
 <?php
 
-namespace tests\acceptance;
+namespace tests\closeConnectionsNoCleanup;
 
 use tests\AcceptanceTester;
 use tests\fixtures\EmptyFixture;
 use tests\helpers\SqlliteHelper;
 
-class SecondCest
+class FixturesInBeforeCest
 {
     public function _before(AcceptanceTester $I)
     {

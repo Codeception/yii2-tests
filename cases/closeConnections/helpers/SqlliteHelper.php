@@ -17,7 +17,16 @@ class SqlliteHelper
     public static function connectionCount()
     {
         $path = self::$temp_name;
-        $count = shell_exec("lsof {$path} | grep {$path} | wc -l");
+        $count = shell_exec("lsof -w {$path} | grep {$path} | wc -l");
         return (int)$count;
     }
+
+    public static function debug()
+    {
+        $path = self::$temp_name;
+        $cmd = "lsof -w {$path}";
+        codecept_debug("Executing : $cmd");
+        codecept_debug(shell_exec($cmd));
+    }
+
 }

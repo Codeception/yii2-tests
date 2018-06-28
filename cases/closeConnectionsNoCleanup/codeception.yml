@@ -9,3 +9,4 @@ modules:
     Yii2:
       configFile: config.php
       transaction: false
+      cleanup: false

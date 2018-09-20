@@ -1,4 +1,7 @@
 <?php
+
+use app\simple\helpers\DummyUser;
+
 return [
     'id' => 'Simple',
     'basePath' => __DIR__,
@@ -7,6 +10,9 @@ return [
         'request' => [
             'enableCsrfValidation' => false,
             'cookieValidationKey' => 'test'
+        ],
+        'user' => [
+            'identityClass' => DummyUser::class
         ]
     ],
     'on beforeRequest' => function() {

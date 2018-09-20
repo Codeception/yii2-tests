@@ -61,4 +61,11 @@ class SimpleCest
         $I->amOnPage(['site/empty-response']);
         $I->seeResponseCodeIs(200);
     }
+
+    public function testMissingUser(FunctionalTester $I)
+    {
+        $I->amLoggedInAs('nobody');
+        $I->amOnPage('site/index');
+        $I->assertTrue(\Yii::$app->user->isGuest);
+    }
 }

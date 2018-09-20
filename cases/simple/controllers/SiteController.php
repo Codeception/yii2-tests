@@ -64,4 +64,9 @@ HTML;
     {
         // Dummy
     }
+
+    public function actionIndex()
+    {
+        return '';
+    }
 }

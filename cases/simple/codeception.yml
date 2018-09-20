@@ -1,12 +1,15 @@
 paths:
-    tests: .
-    log: ../../_output
-    data: _data
-    support: ../../_support
+  tests: .
+  log: ../../_output
+  data: _data
+  support: ../../_support
 namespace: tests\
 extensions:
-    enabled:
-        - Codeception\Extension\RunFailed
+  enabled:
+    - Codeception\Extension\RunFailed
+settings:
+  shuffle: true
+  coolstuff: false
 modules:
   config:
     Yii2:

@@ -1,6 +1,8 @@
 <?php
 
 namespace app\simple\controllers;
+use app\simple\helpers\EmptyString;
+use yii\base\Action;
 use yii\helpers\Url;
 use yii\web\Controller;
 
@@ -40,5 +42,26 @@ HTML;
     {
         \Yii::$app->response->statusCode = 500;
         \Yii::$app->end();
+    }
+
+
+    /**
+     * @param Action $action
+     * @return bool
+     * @throws \yii\web\BadRequestHttpException
+     */
+    public function  beforeAction($action)
+    {
+        if ($action->id === 'empty-response') {
+            \Yii::$app->response->stream = fopen('php://memory', 'r+');
+            \Yii::$app->response->content = new EmptyString('Empty!');
+            return false;
+        }
+        return parent::beforeAction($action);
+    }
+
+    public function actionEmptyResponse()
+    {
+        // Dummy
     }
 }

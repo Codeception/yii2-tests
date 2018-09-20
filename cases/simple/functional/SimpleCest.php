@@ -55,4 +55,10 @@ class SimpleCest
         $I->amOnPage(['site/end']);
         $I->seeResponseCodeIs(500);
     }
+
+    public function testEmptyResponse(FunctionalTester $I)
+    {
+        $I->amOnPage(['site/empty-response']);
+        $I->seeResponseCodeIs(200);
+    }
 }

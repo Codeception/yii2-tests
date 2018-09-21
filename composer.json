@@ -13,9 +13,6 @@
   "require-dev": {
      "codeception/codeception": "2.4.x-dev"
   },
-  "conflicts": {
-    "codeception/stub": "2.0.1"
-  },
   "repositories": [
     {
       "type": "composer",

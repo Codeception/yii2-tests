@@ -1,6 +1,7 @@
 <?php
 namespace tests;
 
+use Codeception\Exception\ModuleException;
 use yii\base\ExitException;
 use yii\web\Application;
 
@@ -64,7 +65,9 @@ class SimpleCest
 
     public function testMissingUser(FunctionalTester $I)
     {
-        $I->amLoggedInAs('nobody');
+        $I->expectException(ModuleException::class, function() use ($I) {
+            $I->amLoggedInAs('nobody');
+        });
         $I->amOnPage('site/index');
         $I->assertTrue(\Yii::$app->user->isGuest);
     }

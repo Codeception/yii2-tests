@@ -6,8 +6,8 @@
 actor: ApiTester
 modules:
   enabled:
-    - Yii2
-    - Asserts
     - REST:
+        url: /
         depends: Yii2
-        url: 
+  config:
+    - Yii2

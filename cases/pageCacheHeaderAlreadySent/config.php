@@ -11,6 +11,12 @@ return [
                 'application/json' => 'yii\web\JsonParser',
             ]
         ],
+        'user' => [
+            'identityClass' => 'app\pageCacheHeaderAlreadySent\models\User',
+            'enableAutoLogin' => false,
+            'enableSession' => false,
+            'loginUrl' => null,
+        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'enableStrictParsing' => false,

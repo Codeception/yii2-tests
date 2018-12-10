@@ -2,6 +2,8 @@
 
 namespace app\pageCacheHeaderAlreadySent\controllers;
 
+use Yii;
+
 class UserController extends \yii\rest\Controller
 {
     public function behaviors()

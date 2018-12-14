@@ -5,28 +5,12 @@ return [
     'basePath' => __DIR__,
     'controllerNamespace' => 'app\pageCacheHeaderAlreadySent\controllers',
     'components' => [
-        'request' => [
-            'cookieValidationKey' => 'test',
-            'parsers' => [
-                'application/json' => 'yii\web\JsonParser',
-            ]
-        ],
         'cache' => [
-            'class' => 'yii\caching\FileCache',
+            'class' => \yii\caching\DummyCache::class,
         ],
         'user' => [
-            'identityClass' => 'app\pageCacheHeaderAlreadySent\models\User',
-            'enableAutoLogin' => false,
-            'enableSession' => false,
-            'loginUrl' => null,
-        ],
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'enableStrictParsing' => false,
-            'showScriptName' => false,
-            'rules' => [
-              'GET users' => 'user/index',
-            ],
+            'class' =>  \yii\caching\DummyCache::class
+//            'identityClass' => 'app\pageCacheHeaderAlreadySent\models\User',
         ],
     ],
 ];

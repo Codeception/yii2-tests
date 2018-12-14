@@ -2,38 +2,21 @@
 
 namespace app\pageCacheHeaderAlreadySent\controllers;
 
-use Yii;
+use yii\filters\PageCache;
 
-class UserController extends \yii\rest\Controller
+class UserController extends \yii\web\Controller
 {
     public function behaviors()
     {
-        $behaviors = parent::behaviors();
-
-        $behaviors[] = [
-            'class' => 'yii\filters\PageCache',
-            'only' => ['index'],
-            'duration' => 3000,
-            'variations' => [
-                Yii::$app->getRequest()->getQueryParam('page'),
-                Yii::$app->getRequest()->getQueryParam('per_page'),
-            ],
+        return [
+            'cache' => [
+            'class' => PageCache::class,
+            ]
         ];
-
-        return $behaviors;
     }
 
     public function actionIndex()
     {
-        return [
-          [
-            'id' => 1,
-            'name' => 'Foo',
-          ],
-          [
-            'id' => 2,
-            'name' => 'Bar',
-          ],
-        ];
+        return 'test';
     }
 }

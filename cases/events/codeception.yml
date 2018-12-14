@@ -13,4 +13,3 @@ modules:
       configFile: config.php
       transaction: true
       cleanup: true
-

@@ -8,9 +8,5 @@ return [
         'cache' => [
             'class' => \yii\caching\DummyCache::class,
         ],
-        'user' => [
-            'class' =>  \yii\caching\DummyCache::class
-//            'identityClass' => 'app\pageCacheHeaderAlreadySent\models\User',
-        ],
     ],
 ];

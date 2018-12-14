@@ -11,5 +11,3 @@ modules:
   config:
     Yii2:
       configFile: config.php
-      transaction: true
-      cleanup: true

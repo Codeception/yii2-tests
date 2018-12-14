@@ -4,4 +4,3 @@ _output
 bin
 .idea
 cases/yii2-app-advanced/_data/db.sqlite
-cases/pageCacheHeaderAlreadySent/runtime

@@ -9,3 +9,5 @@ modules:
   enabled:
     - Yii2
     - Asserts
+steps:
+    - Codeception\Step\ConditionalAssertion    

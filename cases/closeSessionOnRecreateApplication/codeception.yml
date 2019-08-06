@@ -1,0 +1,16 @@
+paths:
+  tests: .
+  log: ../../_output
+  data: _data
+  support: ../../_support
+namespace: tests\
+extensions:
+  enabled:
+    - Codeception\Extension\RunFailed
+modules:
+  config:
+    Yii2:
+      configFile: config.php
+      cleanup: false
+      recreateApplication: true
+      closeSessionOnRecreateApplication: false

@@ -6,7 +6,6 @@ return [
     'controllerNamespace' => 'app\closeSessionOnRecreateApplication\controllers',
     'components' => [
         'request' => [
-            'enableCsrfValidation' => false,
             'cookieValidationKey' => 'test'
         ],
     ],

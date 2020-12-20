@@ -7,7 +7,7 @@
   "require": {
     "yiisoft/yii2": "dev-master",
     "yiisoft/yii2-app-advanced": "dev-master",
-    "codeception/verify": "*",
+    "codeception/verify": "1.*",
     "codemix/yii2-localeurls": "^1.7"
   },
   "require-dev": {

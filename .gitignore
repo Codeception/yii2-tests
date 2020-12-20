@@ -1,6 +1,7 @@
+/composer.lock
 vendor
 _support
 _output
 bin
-.idea
+/.idea
 cases/yii2-app-advanced/_data/db.sqlite
